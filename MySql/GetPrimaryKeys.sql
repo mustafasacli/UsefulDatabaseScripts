@@ -1,20 +1,20 @@
-https://stackoverflow.com/questions/2341278/how-to-get-primary-key-of-table/2341388
+-- https://stackoverflow.com/questions/2341278/how-to-get-primary-key-of-table/2341388
 
 show columns from tablename where `Key` = "PRI";
 
-https://stackoverflow.com/questions/2341278/how-to-get-primary-key-of-table/2341388
+-- https://stackoverflow.com/questions/2341278/how-to-get-primary-key-of-table/2341388
 
 SHOW KEYS FROM table WHERE Key_name = 'PRIMARY'
 
-** If you have spatial tables in your database, use:
+-- ** If you have spatial tables in your database, use:
 
 SHOW KEYS FROM table WHERE Key_name = 'PRIMARY' OR Key_name = 'OGR_FID'
 
 
-https://dataedo.com/kb/query/mysql/list-tables-with-their-primary-keys
+-- https://dataedo.com/kb/query/mysql/list-tables-with-their-primary-keys
 
-The query below lists the tables and their primary key (PK) constraint names in all user databases. 
-By browsing the list, you can spot which tables have and which don't have primary keys.
+-- The query below lists the tables and their primary key (PK) constraint names in all user databases. 
+-- By browsing the list, you can spot which tables have and which don't have primary keys.
 
 
 select tab.table_schema as database_name,
