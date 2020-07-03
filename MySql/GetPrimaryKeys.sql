@@ -40,3 +40,5 @@ group by tab.table_schema,
          tco.constraint_name
 order by tab.table_schema,
          tab.table_name;
+         
+         SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE COLUMN_KEY='PRI' AND TABLE_NAME
