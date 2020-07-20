@@ -5,6 +5,7 @@ SELECT IST.TABLE_SCHEMA, ISC.TABLE_NAME, ISC.COLUMN_NAME, ISC.ORDINAL_POSITION, 
                             AS IS_REQUIRED,
                             ISC.COLUMN_DEFAULT, -- AS DEFAULT_VALUE,
                             ISC.CHARACTER_MAXIMUM_LENGTH,-- AS MAXIMUM_LENGTH,
+                            ISC.AUTOINC_INCREMENT AS IS_IDENTITY,
                             CASE ISC.DATA_TYPE
                             WHEN 'int' THEN ISC.NUMERIC_PRECISION
                             WHEN 'datetime' THEN ISC.DATETIME_PRECISION
@@ -21,7 +22,7 @@ SELECT IST.TABLE_SCHEMA, ISC.TABLE_NAME, ISC.COLUMN_NAME, ISC.ORDINAL_POSITION, 
                             ELSE ISC.NUMERIC_PRECISION END
                              AS NUMERIC_PRECISION,
                             ISC.NUMERIC_SCALE
-							FROM INFORMATION_SCHEMA.COLUMNS ISC INNER JOIN INFORMATION_SCHEMA.TABLES IST
+                            FROM INFORMATION_SCHEMA.COLUMNS ISC INNER JOIN INFORMATION_SCHEMA.TABLES IST
                             ON ISC.TABLE_NAME = IST.TABLE_NAME
                             WHERE IST.TABLE_TYPE = 'TABLE' AND ISC.TABLE_NAME <> 'sysdiagrams'
                             ORDER BY ISC.TABLE_CATALOG, ISC.TABLE_NAME, ISC.ORDINAL_POSITION;
