@@ -1,0 +1,24 @@
+SELECT LENGTH(TRIM(TRANSLATE('123b', ' +-.0123456789',' '))) FROM dual;
+Result: 1
+
+SELECT LENGTH(TRIM(TRANSLATE('a123b', ' +-.0123456789',' '))) FROM dual;
+Result: 2
+
+SELECT LENGTH(TRIM(TRANSLATE('1256.54', ' +-.0123456789',' '))) FROM dual;
+Result: null
+
+SELECT LENGTH(TRIM(TRANSLATE ('-56', ' +-.0123456789',' '))) FROM dual;
+Result: null
+
+
+CREATE FUNCTION is_number (p_string IN VARCHAR2)
+   RETURN INT
+IS
+   v_new_num NUMBER;
+BEGIN
+   v_new_num := TO_NUMBER(p_string);
+   RETURN 1;
+EXCEPTION
+WHEN VALUE_ERROR THEN
+   RETURN 0;
+END is_number;
