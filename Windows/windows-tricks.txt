@@ -1,0 +1,31 @@
+open credential manager;
+
+https://www.makeuseof.com/open-credential-manager-windows-11/
+
+-- Run Command Box
+You can launch Credentials Manager without using your mouse and clicking on options or the context menu using the Run command box. Repeat the following steps:
+
+Press Win + R to launch the Run command box.
+Type control /name Microsoft.CredentialManager in the text input box and press the Enter key.
+
+-- Using the CMD
+You can use the Command Prompt to open Credential Manager directly. No need to navigate through Control Panel to locate the utility. Repeat the following steps:
+
+Press Win + R to open the Run dialog box.
+Type cmd and press Ctrl + Shift + Enter to launch Command Prompt with administrator privileges.
+In the Command Prompt window, type the following command and press the Enter key: control.exe keymgr.dll
+
+-- Using the File Explorer
+Credential Manager’s DLL file is located inside the SysWoW64 folder. You can access it using File Explorer and then run it using Control Panel. 
+Ensure that you have administrator privileges to access the SysWOW64 folder before trying this method. Here’s how:
+
+Press Win + E to launch the File Explorer.
+Go to the address bar, paste the following path, and press the Enter key: C:\Windows\SysWOW64
+Once you are inside the SysWOW64 folder, locate the keymgr.dll file and right-click on it.
+Select Show more options from the context menu and then click on the Open with option.
+Scroll down and click on the Choose an app on your PC option.
+Navigate to the C drive and click on the Windows folder. Then, open the SysWOW64 folder.
+Find the Control.exe program and select it. Click on the Open button.
+
+Window Control Panel will be added to the list of supported programs. Double-click on it to open keymgr.dll file in Control Panel.
+
