@@ -1,0 +1,10 @@
+SELECT LENGTH(TRIM(TRANSLATE('123b', ' +-.0123456789',' '))) FROM dual;
+-- Result: 1
+
+SELECT LENGTH(TRIM(TRANSLATE('a123b', ' +-.0123456789',' '))) FROM dual;
+-- Result: 2
+
+SELECT LENGTH(TRIM(TRANSLATE('1256.54', ' +-.0123456789',' '))) FROM dual;
+--Result: null
+
+SELECT NVL(LENGTH(TRIM(TRANSLATE ('-56', ' +-.0123456789',' '))), 0) FROM dual;
